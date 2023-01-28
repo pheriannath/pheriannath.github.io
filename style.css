@@ -1,0 +1,89 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Unbounded:wght@500;700&display=swap");
+
+:root {
+  --body-bg: #252161;
+  --text-body: #ffffff;
+  --text-gradient-from: #ffa500;
+  --text-gradient-to: #ee4b2b;
+  --border-color: #000000;
+  --border-radius: 0.8rem;
+}
+
+body {
+  margin: 2rem;
+  font-family: "Inter", sans-serif;
+  font-size: clamp(1rem, 2vw, 2rem);
+  text-shadow: 0.25rem 0.25rem 0.25rem rgba(0, 0, 0, 0.25);
+  color: var(--text-body);
+  transition: 0.2s font-size ease-in-out;
+  background: var(--body-bg) url(./topographic.png) repeat;
+}
+
+main {
+  width: clamp(320px, 50% + 20px, 1200px);
+  padding: 1.5rem;
+  background: rgba(0, 0, 0, 0.75);
+  border: 2px dotted;
+  border-radius: var(--border-radius);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Unbounded", cursive;
+}
+
+h1,
+h2 {
+  font-weight: bold;
+}
+
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 500;
+}
+
+h3 + h4 {
+  margin-top: 0;
+}
+
+p:first-of-type {
+  margin-top: 0;
+}
+
+ul {
+  list-style: none;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+.gradient-text {
+  background-clip: text;
+  -webkit-background-clip: text;
+  background-image: linear-gradient(
+    30deg,
+    var(--text-gradient-from),
+    var(--text-gradient-to)
+  );
+  color: transparent;
+  transition: 0.2s all ease-in-out;
+}
+
+h3.gradient-text {
+  margin-bottom: 0.5rem;
+}
+
+.cv > li:not(:last-child) {
+  border-bottom: 2px dotted var(--text-body);
+}
+
+.checklist {
+  margin-left: 2rem;
+  list-style: "\2705";
+  list-style-position: outside;
+}
