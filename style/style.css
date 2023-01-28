@@ -1,8 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Unbounded:wght@500;700&display=swap");
 
 :root {
-  --body-bg: #252161;
+  --body-bg: rebeccapurple; /* love always to eric meyer */
   --text-body: #ffffff;
+  --text-link-normal: #ffcc22;
+  --text-link-hover: #ffffff;
   --text-gradient-from: #ffa500;
   --text-gradient-to: #ee4b2b;
   --border-color: #000000;
@@ -20,7 +22,7 @@ body {
 }
 
 main {
-  width: clamp(320px, 50% + 20px, 1200px);
+  width: clamp(calc(500px - 3rem), 50% + 20px, 1200px);
   padding: 1.5rem;
   background: rgba(0, 0, 0, 0.75);
   border: 2px dotted;
@@ -68,6 +70,39 @@ ul {
   padding-left: 0;
 }
 
+a {
+  position: relative;
+  z-index: 2;
+  padding: 0 2px;
+  text-decoration: none;
+  color: var(--text-link-normal);
+  transition: all 0.2s ease-in-out;
+}
+
+a:hover {
+  text-shadow: none;
+  color: var(--text-link-hover);
+}
+
+a:before {
+  content: "";
+  background-color: var(--text-link-hover);
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 0.125em;
+  z-index: -1;
+  transition: all 0.2s ease-in-out;
+  border-radius: 0.25em;
+}
+
+a:hover:before {
+  background-color: rebeccapurple;
+  bottom: 0;
+  height: 100%;
+}
+
 .gradient-text {
   background-clip: text;
   -webkit-background-clip: text;
@@ -89,7 +124,11 @@ h3.gradient-text {
 }
 
 .checklist {
-  margin-left: 2rem;
+  margin-left: 1.25em;
   list-style: "\2705";
   list-style-position: outside;
+}
+
+.copyright {
+  margin: 1rem 0;
 }
