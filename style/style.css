@@ -12,6 +12,9 @@
 }
 
 body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin: 2rem;
   font-family: "Inter", sans-serif;
   font-size: clamp(1rem, 2vw, 2rem);
@@ -27,6 +30,7 @@ main {
   background: rgba(0, 0, 0, 0.75);
   border: 2px dotted;
   border-radius: var(--border-radius);
+  backdrop-filter: blur(2px);
 }
 
 @media screen and (max-width: 500px) {
@@ -76,15 +80,19 @@ a {
   padding: 0 2px;
   text-decoration: none;
   color: var(--text-link-normal);
-  transition: all 0.2s ease-in-out;
+  transition: color 0.2s ease-in-out;
 }
 
-a:hover {
+a:hover,
+a:active,
+a:focus {
   text-shadow: none;
   color: var(--text-link-hover);
 }
 
-a:before {
+a:before,
+a:active:before,
+a:focus:before {
   content: "";
   background-color: var(--text-link-hover);
   position: absolute;
@@ -93,11 +101,13 @@ a:before {
   width: 100%;
   height: 0.125em;
   z-index: -1;
-  transition: all 0.2s ease-in-out;
+  transition: height 0.2s ease-in-out, background-color 0.2s ease-in-out;
   border-radius: 0.25em;
 }
 
-a:hover:before {
+a:hover:before,
+a:active:before,
+a:focus:before {
   background-color: rebeccapurple;
   bottom: 0;
   height: 100%;
@@ -112,10 +122,13 @@ a:hover:before {
     var(--text-gradient-to)
   );
   color: transparent;
-  transition: 0.2s all ease-in-out;
 }
 
-h3.gradient-text {
+.gradient-text span {
+  color: black; /* this prevents the background-clip rules from applying a gradient, can be any non-transparent value */
+}
+
+.gradient-text ~ h3 {
   margin-bottom: 0.5rem;
 }
 
