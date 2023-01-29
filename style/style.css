@@ -129,6 +129,10 @@ h3.gradient-text {
   list-style-position: outside;
 }
 
+.checklist li:not(:last-child) {
+  margin-bottom: 0.25em;
+}
+
 .copyright {
   margin: 1rem 0;
 }
