@@ -19,7 +19,7 @@ const _contours = contours().size([x, y]);
 
 // Generates a new set of perlin noise and contours
 function generate(timestamp) {
-  ctx.reset();
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
 
   let values = new Float64Array(x * y);
 
