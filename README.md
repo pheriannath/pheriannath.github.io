@@ -1,2 +1,2 @@
 # pheriannath.github.io
-TODO: Wrap this ish in Gatsby and have some fun with it.
+Just a simple homepage built by hand. The topographic animation in the background is generated with a D3 contour map utilizing a Perlin noise generator.
