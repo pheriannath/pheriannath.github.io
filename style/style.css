@@ -14,9 +14,6 @@
 
 body {
   position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   margin: 2rem;
   font-family: "Inter", "Helvetica", sans-serif;
   font-size: clamp(1rem, 2vw, 2rem);
@@ -24,6 +21,14 @@ body {
   color: var(--text-body);
   transition: 0.2s font-size ease-in-out;
   background: linear-gradient(var(--body-bg), var(--body-bg-to));
+}
+
+.body-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 1;
 }
 
 main {
@@ -159,5 +164,4 @@ a:focus:before {
   width: 100%;
   height: 100%;
   transform: scale(1.01);
-  z-index: -1;
 }

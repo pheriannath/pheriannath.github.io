@@ -15,7 +15,7 @@ canvas.height = window.innerHeight;
 // Contour generation w/D3
 const x = window.innerWidth / 8;
 const y = window.innerHeight / 8;
-let _contours = contours().size([x, y]);
+const _contours = contours().size([x, y]);
 
 // Generates a new set of perlin noise and contours
 function generate(timestamp) {
@@ -35,7 +35,7 @@ function generate(timestamp) {
   const context = ctx;
   const projection = geoIdentity().scale(8);
   const path = geoPath(projection, context);
-  context.lineWidth = 2; // maybe randomize vs t!
+  context.lineWidth = 2;
   context.lineJoin = "round";
   context.strokeStyle = "rgb(138, 71, 206)";
 
