@@ -39,7 +39,7 @@ function generate(timestamp) {
   context.lineJoin = "round";
   context.strokeStyle = "rgb(138, 71, 206)";
 
-  const tmax = 240;
+  const tmax = 96;
 
   for (let tmin = 0; tmin < tmax; tmin = tmin + 8) {
     context.beginPath();
