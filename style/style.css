@@ -2,6 +2,7 @@
 
 :root {
   --body-bg: rebeccapurple; /* love always to eric meyer */
+  --body-bg-to: #301848;
   --text-body: #ffffff;
   --text-link-normal: #ffcc22;
   --text-link-hover: #ffffff;
@@ -12,16 +13,17 @@
 }
 
 body {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   margin: 2rem;
-  font-family: "Inter", sans-serif;
+  font-family: "Inter", "Helvetica", sans-serif;
   font-size: clamp(1rem, 2vw, 2rem);
   text-shadow: 0.25rem 0.25rem 0.25rem rgba(0, 0, 0, 0.25);
   color: var(--text-body);
   transition: 0.2s font-size ease-in-out;
-  background: var(--body-bg) url(../assets/topographic.png) repeat;
+  background: linear-gradient(var(--body-bg), var(--body-bg-to));
 }
 
 main {
@@ -148,4 +150,14 @@ a:focus:before {
 
 .copyright {
   margin: 1rem 0;
+}
+
+#topography {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: scale(1.01);
+  z-index: -1;
 }
